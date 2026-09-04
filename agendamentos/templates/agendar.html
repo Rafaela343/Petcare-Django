@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petcare - Marcar Consulta</title>
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <link href="https://jsdelivr.net" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm mb-5">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="/"><i class="bi bi-heart-pulse-fill me-2"></i>Petcare</a>
+            <a class="btn btn-outline-primary btn-sm rounded-pill" href="/"><i class="bi bi-arrow-left me-1"></i> Voltar</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card border-0 shadow-sm p-4">
+                    <h3 class="fw-bold text-center mb-4"><i class="bi bi-calendar-plus text-primary me-2"></i>Agendar Consulta</h3>
+                    
+                    <form method="POST">
+                        <!-- Token de segurança obrigatório do Django -->
+                        {% csrf_token %}
+                        
+                        <!-- Seleção do Pet -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Selecione o seu Pet</label>
+                            <select name="pet" class="form-select" required>
+                                {% for pet in pets %}
+                                    <option value="{{ pet.id }}">{{ pet.nome }} ({{ pet.especie }})</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Seleção do Veterinário -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Selecione o Veterinário</label>
+                            <select name="veterinario" class="form-select" required>
+                                {% for vet in veterinarios %}
+                                    <option value="{{ vet.id }}">{{ vet.nome }} - {{ vet.especialidade }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Seleção do Serviço -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Selecione o Serviço</label>
+                            <select name="servico" class="form-select" required>
+                                {% for servico in servicos %}
+                                    <option value="{{ servico.id }}">Serviço R$ {{ servico.preco }}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+
+                        <!-- Data e Horário -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Data</label>
+                                <input type="date" name="data" class="form-control" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label fw-semibold">Horário</label>
+                                <input type="time" name="horario" class="form-control" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 rounded-pill mt-3 py-2 fw-semibold">Confirmar Agendamento</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

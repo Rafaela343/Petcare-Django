@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Petcare - Clínica Veterinária</title>
+    <!-- Bootstrap 5 CSS para um visual moderno e rápido -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <!-- Ícones do Bootstrap -->
+    <link href="https://jsdelivr.net" rel="stylesheet">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+            padding: 100px 0;
+        }
+        .card-servico {
+            transition: transform 0.2s;
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .card-servico:hover {
+            transform: translateY(-5px);
+        }
+        .navbar-brand {
+            font-weight: 700;
+            color: #0369a1 !important;
+        }
+        .btn-primary {
+            background-color: #0284c7;
+            border-color: #0284c7;
+        }
+        .btn-primary:hover {
+            background-color: #0369a1;
+            border-color: #0369a1;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu de Navegação -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-heart-pulse-fill me-2"></i>Petcare</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-primary rounded-pill px-4" href="/admin">Painel Administrativo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Seção Principal (Hero) -->
+    <header class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <span class="badge bg-info text-dark mb-3 px-3 py-2 rounded-pill fw-semibold">O melhor cuidado para o seu pet</span>
+                    <h1 class="display-4 fw-bold text-dark mb-4">Cuidado e carinho quando eles mais precisam</h1>
+                    <p class="lead text-secondary mb-4">Oferecemos atendimento veterinário especializado, banho, tosa e um sistema completo para gerenciar as consultas do seu melhor amigo.</p>
+                    <a href="#servicos" class="btn btn-primary btn-lg rounded-pill px-4 me-2">Conhecer Serviços</a>
+                </div>
+                <div class="col-md-6 text-center mt-5 mt-md-0">
+                    <i class="bi bi-heart-fill text-danger" style="font-size: 10rem; opacity: 0.2;"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Seção de Serviços -->
+    <section id="servicos" class="py-5 bg-light">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Nossos Serviços</h2>
+                <p class="text-secondary">Tudo o que seu companheiro precisa em um só lugar</p>
+            </div>
+            <div class="row g-4">
+                <!-- Serviço 1 -->
+                <div class="col-md-4">
+                    <div class="card card-servico h-100 p-4 text-center">
+                        <div class="text-primary mb-3"><i class="bi bi-heart-pulse" style="font-size: 2.5rem; color: #0284c7;"></i></div>
+                        <h4 class="fw-bold">Consultas Médicas</h4>
+                        <p class="text-secondary card-text">Atendimento com veterinários experientes prontos para diagnosticar e tratar seu pet com total dedicação.</p>
+                    </div>
+                </div>
+                <!-- Serviço 2 -->
+                <div class="col-md-4">
+                    <div class="card card-servico h-100 p-4 text-center">
+                        <div class="text-primary mb-3"><i class="bi bi-scissors" style="font-size: 2.5rem; color: #0284c7;"></i></div>
+                        <h4 class="fw-bold">Banho & Tosa</h4>
+                        <p class="text-secondary card-text">Higiene completa com produtos adequados para cada tipo de pelagem, garantindo conforto e bem-estar.</p>
+                    </div>
+                </div>
+                <!-- Serviço 3 -->
+                <div class="col-md-4">
+                    <div class="card card-servico h-100 p-4 text-center">
+                        <div class="text-primary mb-3"><i class="bi bi-calendar-check" style="font-size: 2.5rem; color: #0284c7;"></i></div>
+                        <h4 class="fw-bold">Agendamento Fácil</h4>
+                        <p class="text-secondary card-text">Evite filas e conflitos de horários através do nosso sistema de marcação integrada e inteligente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="bg-dark text-white py-4 mt-auto">
+        <div class="container text-center">
+            <p class="mb-2">&copy;
